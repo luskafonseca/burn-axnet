@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-br" xmlns="http://www.we.org/1999/xhtml"
+	layout:decorate="~{layout}">
+<meta charset="UTF-8"/>
+<head>
+<title>Home</title>
+</head>
+
+<section class="layout-content" layout:fragment="conteudo">
+
+	<section class="layout-content">
+		<div class="container">
+			<nav
+				class="navbar navbar-expand-md navbar-top bg-secondary text-light">
+				<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+					<ul class="navbar-nav  mr-auto">
+						<li class="nav-item active">
+							<h4>Cadastro de Papeis</h4>
+						</li>
+					</ul>
+					<a class="btn btn-primary btn-md" href="/listarPapel" role="button"> <span
+						class="oi oi-spreadsheet" title="Cadastro" aria-hidden="true"></span>
+						<span>Listar Papeis</span>
+					</a>
+				</div>
+			</nav>
+		</div>
+		<div class="container p-5" id="cadastro">
+			<form action="/salvarPapel" method="POST" th:object=${role}>
+				<div class="form-group row  p-5">
+					<label for="nomeRole" class="col-sm-4 col-form-label">Papel</label>
+					<div class="col-sm-8">
+						<input type="text" class="form-control" id="nomeRole"
+							placeholder="Nome Papeis" autofocus="autofocus"  th:field="*{nomeRole}"/>
+						<div class="invalid-feedback"></div>
+					</div>
+				</div>
+				
+				<input type="hidden" id="id" value="" th:field="*{id}" />
+				<button type="submit" class="btn btn-primary btn-sm">Salvar</button>
+			</form>
+		</div>
+	</section>
+	</body>
+</html>
