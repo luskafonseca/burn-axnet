@@ -1,6 +1,5 @@
 
 <!DOCTYPE html>
-
 <html lang="pt-br" xmlns="http://www.we.org/1999/xhtml"
 	layout:decorate="~{layout}">
 <meta charset="UTF-8"/>
@@ -12,15 +11,15 @@
 
 	<section class="layout-content">
 
-		<div class="container">
-			<nav class="navbar navbar-expand-md bg-secondary text-light">
-				<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		<div class="container pt-5">
+			<nav class="navbar navbar-expand-md text-light pt-5">
+				<div class="collapse navbar-collapse pt-5" id="navbarsExampleDefault">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
 							<h4>Lista de permissao</h4>
 						</li>
 					</ul>
-					<a class="btn btn-primary btn-md" href="/cadastrarPermissao"
+					<a class="btn btn-light btn-md" href="/cadastrarPermissao"
 						role="button"> <span class="oi oi-plus" title="Cadastro"
 						aria-hidden="true"></span> <span>Cadastrar Permissao</span>
 					</a>
@@ -28,8 +27,8 @@
 			</nav>
 		</div>
 		<div class="container">
-			<div class="table-responsive">
-				<table class="table table-striped table-hover table-sm">
+			<div class="table-wrapper">
+				<table class="table table-striped table-dark text-center text-light">
 					<thead>
 						<tr>
 							<th>#</th>
@@ -45,11 +44,11 @@
 							<td th:text="${permissao.papel.nomeRole}"></td>
 
 							<td colspan="2">
-							<a class="btn btn-primary btn-sm mr-2" role="button" th:href="@{/editarPermissao/{id}(id=${permissao.id})}">
+							<a class="btn btn-light btn-sm mr-2" role="button" th:href="@{/editarPermissao/{id}(id=${permissao.id})}">
 									<span class="oi oi-pencil" title="Editar" aria-hidden="true"></span>
 
-									<a data-toggle="modal" data-target="#modal-warning" class="btn btn-danger btn-sm ml-2" th:attr="data-target='#modal-warning'+${permissao.id}">
-									<span class="oi oi-x text-light" title="Excluir" aria-hidden="true"></span></a></td>
+									<a data-toggle="modal" data-target="#modal-warning" class="btn btn-light btn-sm ml-2" th:attr="data-target='#modal-warning'+${permissao.id}">
+									<span class="oi oi-x text-danger" title="Excluir" aria-hidden="true"></span></a></td>
 
 							<div class="modal modal-warning fade in" th:id="modal-warning+${permissao.id}">
 

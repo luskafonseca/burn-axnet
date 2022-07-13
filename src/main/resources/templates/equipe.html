@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-br" xmlns="http://www.we.org/1999/xhtml"
+	layout:decorate="~{layout}">
+	
+<head>
+<title>Home</title>
+
+	
+<meta charset="UTF-8"/>
+</head>
+
+<section class="layout-content" layout:fragment="conteudo">
+<br><br><br><br>
+	<div class="container">  
+
+  <form action="/salvarEquipe" method="POST" th:object=${equipe} id="contact">
+  <div class="carousel-caption d-md-block">
+              <p class="fadeInUp wow" data-wow-delay=".3s">Liga Burn de Games</p>
+              <h1 class="wow fadeInDown heading" data-wow-delay=".4s">Idealizado pela Axnet</h1>
+            </div>
+  <div class="form-group row  p-5">
+  
+    <h3>Cadastro</h3>
+    
+    <fieldset>
+      <input placeholder="Nome da Equipe" name="equipe" id="nome" th:field="*{nome}" type="text" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Nickname jogador 1" name="player1" id="player1"  type="text" th:field="*{player1}" required  autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Nickname jogador 2" name="player2" id="player2" type="text" th:field="*{player2}" required  autofocus>
+    </fieldset>
+     <fieldset>
+      <input placeholder="Nickname jogador 3" name="player3" id="player3"  type="text" th:field="*{player3}" required  autofocus>
+    </fieldset>
+     <fieldset>
+      <input placeholder="Nickname jogador 4" name="player4" id="player4"  type="text" th:field="*{player4}" required  autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Telefone para contato 99-99999-9999" name="contato" id="contato" type="tel" th:field="*{contato}" required  autofocus>
+    </fieldset>
+     <input type="hidden" id="id" value="" th:field="*{id}" />
+    <fieldset>
+  	
+  	
+  					<a data-toggle="modal" data-target="#modal-warning" class="btn btn-light btn-sm ml-2" th:attr="data-target='#modal-warning'+${equipe.id}">
+									<span class="oi oi-check text-dark" title="Cadastrar" aria-hidden="true"></span></a></td>
+									
+  						 <div class="modal modal-warning fade in" th:id="modal-warning+${equipe.id}">
+
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+
+											<h2 class="modal-title">Atenção</h2>
+
+										</div>
+										<div class="modal-body">
+											<h5>Confirma o registro?</h5>
+										</div>
+										<div class="modal-footer">
+											<button type="submit" class="btn12 btn-outline" th:href="@{/areaAdmin}" onclick="funcao3()">Sim</button>
+											<button type="submit" class="btn12 btn-outline pull-left"  data-dismiss="modal">Não</button>
+										</div>
+									</div>
+								</div>
+							</div>
+    </fieldset>
+  </form>
+  </div>
+		
+		
+		
+		
+
+</section>
+</body>
+
+</html>

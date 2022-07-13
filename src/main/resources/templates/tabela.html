@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	layout:decorate="~{layout}">
+
+<meta charset="UTF-8"/>
+    <head>
+    <title>Home</title>
+	</head>
+<body>
+<section class="layout-content" layout:fragment="conteudo">
+<br><br><br><br>
+		<div class="container">  
+
+  <form action="/salvarTabela" method="POST" th:object=${tabela} id="contact">
+
+  <div class="form-group row  p-5">
+ 
+			<nav class="navbar navbar-expand-lg scrolling-navbar">
+				<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+					</ul>
+					<a class="btn btn-light mr-5" href="/listarTabela" role="button" >Controle da Tabela</a>
+				</div>
+					</nav>
+					
+					<nav class="navbar navbar-expand-lg scrolling-navbar">
+				<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+					</ul>
+					<a class="btn btn-light ml-5" href="/listarEquipe" role="button" >Controle de Equipes</a>
+				</div>
+				
+			</nav>
+		
+	</div>
+    <h3>Cadastros de Equipes Na Tabela</h3>
+    
+    
+    <fieldset>
+    
+   							<select id="nome" class="form-control" th:field="*{nome}">
+							
+							<option th:each="equipe: ${equipes}" th:value="${equipe.nome}" th:text="${equipe}">Selecione...</option>
+							
+						</select>
+   
+    </fieldset>
+    <fieldset>
+    <input placeholder="Booyah" name="boya" id="boya" th:field="*{boya}"  type="text" required  autofocus>
+    </fieldset>
+    <fieldset>
+      <input placeholder="Abates" name="abate" id="abate" th:field="*{abate}"  type="text" required  autofocus>
+    </fieldset>
+	 <fieldset>
+	  <input placeholder="Pontos" name="ponto" id="ponto"  th:field="*{ponto}"  type="text" required  autofocus>
+    </fieldset>
+     <input type="hidden" id="id" value="" th:field="*{id}" />
+    <fieldset>
+   <button type="submit" class="neon-bt" onclick="funcao3()"><span></span> <span></span><span></span><span></span>Confirmar</button>
+    </fieldset>
+  </form>
+  </div>
+		
+
+
+
+
+
+ 
+ </section>
+ 
+</body>
+
+</html>

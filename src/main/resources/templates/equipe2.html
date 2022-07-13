@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-br" xmlns="http://www.we.org/1999/xhtml"
+	layout:decorate="~{layout}">
+	
+<head>
+<title>Home</title>
+
+	
+<meta charset="UTF-8"/>
+</head>
+
+<section class="layout-content" layout:fragment="conteudo">
+<br><br><br><br>
+	<div class="container">  
+
+  <form action="/salvarEquipe" method="POST" th:object=${equipe2} id="contact">
+  <div class="carousel-caption d-md-block">
+              <p class="fadeInUp wow" data-wow-delay=".3s">Liga Burn de Games</p>
+              <h1 class="wow fadeInDown heading" data-wow-delay=".4s">Idealizado pela Axnet</h1>
+            </div>
+  <div class="form-group row  p-5">
+  
+    <h3>Cadastro</h3>
+    
+    <fieldset>
+      <input placeholder="Nome da Equipe" name="equipe" id="nome" th:field="*{nome}" type="text" required  autofocus>
+     
+    </fieldset>
+    <fieldset>
+      <input placeholder="Nickname jogador 1" name="player1" id="player1"  type="text" th:field="*{player1}" required  autofocus>
+     
+    </fieldset>
+    <fieldset>
+      <input placeholder="Nickname jogador 2" name="player2" id="player2" type="text" th:field="*{player2}" required  autofocus>
+     
+    </fieldset>
+     <fieldset>
+      <input placeholder="Nickname jogador 3" name="player3" id="player3"  type="text" th:field="*{player3}" required  autofocus>
+    
+    </fieldset>
+     <fieldset>
+      <input placeholder="Nickname jogador 4" name="player4" id="player4"  type="text" th:field="*{player4}" required  autofocus>
+      
+    </fieldset>
+    <fieldset>
+      <input placeholder="Telefone para contato 99-99999-9999" name="contato" id="contato" type="tel" th:field="*{contato}" required>
+         
+    </fieldset>
+     <input type="hidden" id="id" value="" th:field="*{id}" />
+   <fieldset>
+   <INPUT TYPE="checkbox" NAME="OPCAO" VALUE="op2" CHECKED><h3 class="color:white">Termo de Ciencia e <a href="https://drive.google.com/file/d/1_g_dq31X8-fyHsbFT0K6NzWH72ALRb4M/view?usp=sharing"> concordancia</a> </h3>
+   </fieldset>
+   
+    <fieldset>
+  	  	<button type="submit" class="neon-bt" onclick="funcao1()"><span></span> <span></span><span></span><span></span>Confirmar</button>
+
+    </fieldset>
+  </form>
+  </div>
+		
+		
+		
+		
+
+</section>
+</body>
+
+</html>

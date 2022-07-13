@@ -5,15 +5,118 @@
     <head>
     <title>Home</title>
 	</head>
+<body>
+<section class="layout-content" layout:fragment="conteudo">
 
- <section class="layout-content" layout:fragment="conteudo">
- 
- <h1>Exemplo de fragmento Thymeleaf teste</h1>
- 
+   <div id="main-slide" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#main-slide" data-slide-to="0" class="active"></li>
+          <li data-target="#main-slide" data-slide-to="1"></li>
+          <li data-target="#main-slide" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="image/slide1.jpg" alt="First slide">
+            <div class="carousel-caption d-md-block">
+              <p class="fadeInUp wow" data-wow-delay=".3s">Liga Burn de Games</p>
+              <h1 class="wow fadeInDown heading" data-wow-delay=".4s">Idealizado pela Axnet</h1>
+              <a class="neon-bt" href="/cadastrarEquipe2"><span></span> <span></span><span></span><span></span>Faça sua inscrição</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="image/slide2.jpg" alt="Second slide">
+            <div class="carousel-caption d-md-block">
+              <p class="fadeInUp wow" data-wow-delay=".3s">Liga Burn de Games</p>
+              <h1 class="wow bounceIn heading" data-wow-delay=".4s">Etapa presencial</h1>
+             
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="image/slide3.jpg" alt="Third slide">
+            <div class="carousel-caption d-md-block">
+              <p class="fadeInUp wow" data-wow-delay=".3s">Liga Burn de Games</p>
+              <h1 class="wow fadeInUp heading" data-wow-delay=".4s">Eventos passados</h1>
+             <a class="neon-bt" href="/evento"><span></span> <span></span><span></span><span></span>Saiba Mais</a>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#main-slide" role="button" data-slide="prev">
+          <span class="carousel-control" aria-hidden="true"><i class="lni-chevron-left"></i></span>
+          <span class="sr-only">Proximo</span>
+        </a>
+        <a class="carousel-control-next" href="#main-slide" role="button" data-slide="next">
+          <span class="carousel-control" aria-hidden="true"><i class="lni-chevron-right"></i></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+      </div>
+      <!-- Main Carousel Section End -->
+
+      
+ <!-- Header Area wrapper End -->
+    <!-- Coundown Section Start -->
+    <section class="countdown-timer section-padding">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="heading-count">
+              <h2 class="wow fadeInDown" data-wow-delay="0.2s">Proxima Edição</h2>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row time-countdown justify-content-center wow fadeInUp" data-wow-delay="0.2s">
+              <div id="clock" class="time-count"></div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <section id="teste" class="section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="section-title-header text-center">
+              <h1 class="section-title wow fadeInUp" data-wow-delay="0.2s">Nossos Campeões</h1>
+             
+            </div>
+          </div>
+        </div>
+        <div class="row">
+        
+            
+      
+            
+     <div class="div7">     
+  
+
+<div class="meio">
+<video  width="420" height="980" autoplay loop muted poster="../image/poster1.PNG">
+
+    <source src="../video/video1.mp4" type="video/mp4">
+
+  <p>Your browser doesn't support HTML5 video. Here is a <a href="video.mp4">link to the video</a> instead.</p>
+</video>
+
+ </div>
+ <div class="direita">
+<video  width="420" height="980" autoplay loop muted poster="../image/poster3.PNG">
+
+    <source src="../video/video3.mp4" type="video/mp4">
+
+  <p>Your browser doesn't support HTML5 video. Here is a <a href="video.mp4">link to the video</a> instead.</p>
+</video>
+
+ </div>
+</div>
+
+  
+          </div>
+      </div>
+    </section>
+  
  </section>
  
-
-
 </body>
 
 </html>

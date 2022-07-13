@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="pt-br" xmlns="http://www.we.org/1999/xhtml" layout:decorate="~{layout}">
+<meta charset="UTF-8"/>
+    <head>
+    <title>Home</title>
+	</head>
+<body>
+<section class="layout-content" layout:fragment="conteudo">
+<br><br><br><br>
+		<div class="container">  
+
+  <form action="/salvarTabela" method="POST" th:object=${tabela} id="contact">
+
+
+			<h2>Administração de Jogos</h2>
+
+
+
+  <div class="form-group row ml-5 mr-5 p-5">
+  
+  
+ 		
+				
+			<div class="containerc mr-5 ml-5">
+  <div class="card">
+    
+    <div class="contentBx">
+      <h2>Controle da Tabela</h2>
+      
+      <br><br>
+      <a role="button" href="/listarTabela">Acessar</a>
+    </div>
+  </div>
+</div>
+				
+				<div class="containerc mr-2 ml-5">
+  <div class="card">
+    
+    <div class="contentBx">
+      <h2>Controle de Equipes</h2>
+      
+      <br><br>
+      <a href="/listarEquipe">Acessar</a>
+    </div>
+  </div>
+</div>
+			
+		<div class="containerc mr-2 ml-5">
+  <div class="card">
+    
+    <div class="contentBx">
+      <h2>Visualizar Tabela</h2>
+      
+      <br><br>
+      <a href="/listarTabela2">Acessar</a>
+    </div>
+  </div>
+</div>		
+	</div>
+  </form>
+  
+  <form action="/salvarTabela" method="POST" th:object=${tabela} id="contact">
+	
+	<h2>Administração Usuarios</h2>
+	
+  <div class="form-group row ml-5 mr-5 p-5">
+ 
+			<div class="containerc2 mr-5 ml-5">
+  <div class="card">
+    
+    <div class="contentBx">
+      <h2>Controle de Usuarios</h2>
+      
+      <br><br>
+      <a role="button" href="/listarUsuario">Acessar</a>
+    </div>
+  </div>
+</div>
+				
+				<div class="containerc2 mr-2 ml-5">
+  <div class="card">
+    
+    <div class="contentBx">
+      <h2>Controle Papel</h2>
+      
+      <br><br>
+      <a href="/listarPapel">Acessar</a>
+    </div>
+  </div>
+</div>
+			
+	<div class="containerc2 mr-2 ml-5">
+  <div class="card">
+    
+    <div class="contentBx">
+      <h2>Controle Permissão</h2>
+      
+      <br><br>
+      <a href="/listarPermissao">Acessar</a>
+    </div>
+  </div>
+</div>			
+	</div>
+  </form>
+  </div>
+ </section>
+ 
+</body>
+
+</html>

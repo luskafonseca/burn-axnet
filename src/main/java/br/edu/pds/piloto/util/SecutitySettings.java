@@ -25,19 +25,22 @@ public class SecutitySettings extends WebSecurityConfigurerAdapter {
 		}
 	
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
 	auth.jdbcAuthentication().dataSource(dataSource).usersByUsernameQuery("select usuarios.nome as username, usuarios.senha as password, 1 as enable from usuarios where nome=?")
 	.authoritiesByUsernameQuery("select usuarios.nome as username, papeis.role as authority from permissoes inner join usuarios on usuarios.id=permissoes.usuario_id inner join papeis on papeis.id=permissoes.papel_id where usuarios.nome=?")
 	.passwordEncoder(new BCryptPasswordEncoder());
 	}
 
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests()
-		/*.antMatchers("/listarPapel", "/cadastrarPapel", "/salvarPapel", "/editarPapel","/excluirPapel").hasAuthority("papel")
+		http.authorizeRequests().antMatchers("/cadastrarEquipe2", "/salvarEquipe").permitAll().and()
+		.csrf().disable().authorizeRequests()
+		.antMatchers("/listarPapel", "/cadastrarPapel", "/salvarPapel", "/editarPapel","/excluirPapel").hasAuthority("papel")
 		.antMatchers("/listarPermissao", "/cadastrarPermissao", "/salvarPermissao", "/editarPermissao", "/excluirPermissao").hasAuthority("permissao")
-		.antMatchers("/listarUsuario", "/cadastrarUsuario", "/salvarUsuario", "/editarUsuario", "/excluirUsuario").hasAuthority("usuario")*/
-		.antMatchers("/listarCidade", "/cadastrarCidade", "/salvarCidade", "/editarCidade", "/excluirCidade").hasAuthority("cidade")
-		.antMatchers("/listarEstado", "/cadastrarEstado", "/salvarEstado", "/editarEstado", "/excluirEstado").hasAuthority("estado")
-		 .and().formLogin().permitAll().and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-		 .logoutSuccessUrl("/").and().exceptionHandling().accessDeniedPage("/negarAcesso");
+		.antMatchers("/listarUsuario", "/cadastrarUsuario", "/salvarUsuario", "/editarUsuario", "/excluirUsuario").hasAuthority("usuario")
+		.antMatchers("/listarTabela", "/cadastrarTabela", "/salvarTabela", "/editarTabela", "/excluirTabela").hasAuthority("tabela")
+		.antMatchers("/listarEquipe", "/editarEquipe", "/excluirEquipe").hasAuthority("equipe")
+		.antMatchers("/areaAdmin").hasAuthority("admin")
+		 .and().formLogin().loginPage("/login").permitAll().and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+		 .logoutSuccessUrl("/areaAdmin").and().exceptionHandling().accessDeniedPage("/negarAcesso");
 	}
 }

@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+
+<html lang="pt-br" xmlns="http://www.we.org/1999/xhtml"
+	layout:decorate="~{layout}">
+<meta charset="UTF-8"/>
+<head>
+<title>Equipes</title>
+</head>
+<section class="layout-content" layout:fragment="conteudo">
+<br><br><br><br>
+ <div class="carousel-caption d-md-block">
+              <p class="fadeInUp wow" data-wow-delay=".3s">Liga Burn de Games</p>
+              <h1 class="wow fadeInDown heading" data-wow-delay=".4s">Idealizado pela Axnet</h1>
+            </div>
+
+		<div class="container">
+			<nav class="navbar navbar-expand-md bg-secondary text-light">
+				
+			</nav>
+		</div>
+		<div class="container">
+			<div class="table-responsive container grad w3-center">
+				<table id="myTable" class="table table-striped table-dark text-center">
+					<thead>
+						<tr id="data_table">
+							<th><a class="neon-bt"><span></span><span></span><span></span><span></span>Classisficação</a></th>
+							<th><a class="neon-bt"><span></span><span></span><span></span><span></span>Equipe</a></th>
+							<th><a class="neon-bt"><span></span><span></span><span></span><span></span>Booyah!</a></th>
+							<th><a class="neon-bt"><span></span><span></span><span></span><span></span>Abates</a></th>
+							<th><a class="neon-bt"><span></span><span></span><span></span><span></span>Pontos</a></th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="tabela : ${tabelas}">
+							<td> </td>
+							<td th:text="${tabela.nome}"></td>
+							<td th:text="${tabela.boya}"></td>
+							<td th:text="${tabela.abate}"></td>
+							<td th:text="${tabela.ponto}"></td>
+						
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+</section>
+
+</body>
+
+</html>

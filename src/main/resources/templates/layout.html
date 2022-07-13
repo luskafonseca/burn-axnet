@@ -3,69 +3,137 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-<title>Layout</title>
-<meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta name="description" content="" />
-<meta name="author" content="" />
-<link rel="icon" href="/image/favicon.png" />
+    <title>Liga Burn Axnet</title>
 
-<!-- Bootstrap core CSS -->
 <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="/webjars/open-iconic/font/css/open-iconic-bootstrap.min.css"
 	rel="stylesheet" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" >
+    <!-- Icon -->
+    <link rel="stylesheet" type="text/css" href="../fonts/line-icons.css">
+  <!-- Main Style -->
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="../css/responsive.css">
+     <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="../css/animate.css">
+    <!-- Nivo Lightbox -->
+    <link rel="stylesheet" type="text/css" href="../css/nivo-lightbox.css" >
+     <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="../css/slicknav.css">
 
-<!-- Custom styles for this template -->
-<link href="/css/style.css" rel="stylesheet" />
-</head>
+  </head>
+  <body>
 
+     <header id="header-wrap">
+      <!-- Navbar Start -->
+      <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+        <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+              <span class="icon-menu"></span>
+            </button>
+            <a href="/" class="navbar-brand"><img src="image/logo.png" alt=""></a>
+          </div>
+          <div class="collapse navbar-collapse" id="main-navbar">
+            <ul class="navbar-nav mr-auto w-100 justify-content-end">
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://www.axnet.com.br">Quem somos ?</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cadastrarEquipe2">Inscrição</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/listarTabela2">Classificação</a>
+              </li>
+              <li class="nav-item">
+              
+                <a sec:authorize="hasAuthority('admin')" class="nav-link"th:href="@{/areaAdmin}">Área Admin</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login">Entrar</a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-<body>
+        <!-- Mobile Menu Start -->
+        <ul class="mobile-menu">
+          <li>
+            <a class="page-scrool" href="/">Home</a>
+          </li>
+          <li>
+            <a class="page-scrool" href="https://www.axnet.com.br">Quem somos ?</a>
+          </li>
+          <li>
+             <a class="page-scroll" href="/cadastrarEquipe2">Inscrição</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="/listarTabela2">Classificação</a>
+          </li>
+          <li>
+            <a sec:authorize="hasAuthority('admin')" class="nav-link" th:href="@{/areaAdmin}">Área Admin</a>
+          </li>
+          <li class="nav-item">
+                <a class="btn btn-outline-primary" href="/login">Entrar</a>
+              </li>
+        </ul>
+        <!-- Mobile Menu End -->
 
-	<header>
-		<div
-			class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-
-			<h3 class="my-0 mr-md-auto font-weight-normal">Projeto Piloto
-				Spring</h3>
-
-			<nav class="my-2 my-md-0 mr-md-3">
-				<a class="p-2 text-dark" href="/">Home</a>
-				<a sec:authorize="hasAuthority('cidade')" class="p-2 text-dark" th:href="@{/listarCidade}">Cidades</a> 
-				<a sec:authorize="hasAuthority('estado')"class="p-2 text-dark" th:href="@{/listarEstado}">Estados</a>
-				<a sec:authorize="hasAuthority('usuario')"class="p-2 text-dark"th:href="@{/listarUsuario}">Usuarios</a>
-				<a sec:authorize="hasAuthority('papel')"class="p-2 text-dark"th:href="@{/listarPapel}">Papeis</a>
-				<a sec:authorize="hasAuthority('permissao')" class="p-2 text-dark"th:href="@{/listarPermissao}">Permissao</a>
-			</nav>
-			
-			<a class="btn btn-outline-primary" href="/logout">Sair</a>
-			<span sec:authentication="name"></span>
-		</div>
-	</header>
-	<div class="layout-main">
+      </nav>
+      <!-- Navbar End -->
+       </header>
+  
+  
+  <div class="layout-main">
 
 		<section class="layout-content" layout:fragment="conteudo">
-			<h1>teste</h1>
+			
+			
 		</section>
+		
 	</div>
-	<footer class="layout-footer">
+  
+ 
+
+<footer class="layout-footer">
 		<div class="container">
-			<span class="footer-copy">&copy; 2022 - Lucas Fonseca - PDS - SI
-				- IFSULDEMINAS. Todos os direitos reservados.</span>
+			<span class="footer-copy">&copy; 2022 - Lucas Fonseca - Todos os direitos reservados.</span>
 		</div>
 	</footer>
-
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="/webjars/jquery/jquery.min.js"></script>
-	<script src="/webjars/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
-</body>
+ <!-- Go to Top Link -->
+    <a href="#" class="back-to-top">
+    	<i class="lni-chevron-up"></i>
+    	
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../js/jquery-min.js"></script>
+    <script src="../js/table.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.countdown.min.js"></script>
+    <script src="../js/jquery.nav.js"></script>
+    <script src="../js/jquery.easing.min.js"></script>
+    <script src="../js/wow.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+    <script src="../js/nivo-lightbox.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/form-validator.min.js"></script>
+    <script src="../js/contact-form-script.min.js"></script>
+    <script src="../js/map.js"></script>
+    <script type="../js/javascript" src="//maps.googleapis.com/maps/api/js?key=AIzaSyCsa2Mi2HqyEcEnM1urFSIGEpvualYjwwM"></script>
+      
+  </body>
 </html>
