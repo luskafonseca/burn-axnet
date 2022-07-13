@@ -9,13 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>br.edu.pds</groupId>
-	<artifactId>piloto</artifactId>
+	<artifactId>burn</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>piloto</name>
-	<description>Projeto Piloto Spring Boot</description>
-	<properties>
-		<java.version>11</java.version>
-	</properties>
+	<name>burn</name>
+	<description>Projeto burn Spring Boot</description>
+
 	<dependencies>
 	
 		<dependency>
@@ -94,17 +92,27 @@
 			<version>3.3.1-1</version>
 		</dependency>
 	
+	
+	
+	
 	</dependencies>
 	
 
 	
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
+		 <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+          
+        </plugins>
 	</build>
+
+
+   <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
 
 </project>
