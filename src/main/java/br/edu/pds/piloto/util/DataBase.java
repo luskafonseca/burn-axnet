@@ -1,7 +1,11 @@
 package br.edu.pds.piloto.util;
 
+import java.net.URI;
+import java.net.URISyntaxException;
+
 import javax.sql.DataSource;
 
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -12,7 +16,26 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 @Configuration
 public class DataBase {
 
-	@Bean
+
+	 @Bean    
+	    public DataSource getDataSource() throws URISyntaxException {
+
+	        URI dbUri = new URI(System.getenv("DATABASE_URL"));
+
+	        String username = dbUri.getUserInfo().split(":")[0];
+	        String password = dbUri.getUserInfo().split(":")[1];
+	        String dbUrl = "jdbc:postgresql://" + dbUri.getHost() + ':' + dbUri.getPort() + dbUri.getPath();
+
+	        DataSourceBuilder<?> dataSourceBuilder = DataSourceBuilder.create();
+	        dataSourceBuilder.url(dbUrl);
+	        dataSourceBuilder.username(username);
+	        dataSourceBuilder.password(password);
+	        return dataSourceBuilder.build();
+	    }
+
+
+	
+	/*@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.postgresql.Driver");
@@ -21,7 +44,7 @@ public class DataBase {
 		dataSource.setPassword("f6b519ec5963032bb579e7db985768fd5fe333554e4c07e85045b928b3502ea7");
 
 		return dataSource;
-	}
+	}*/
 
 	@Bean
 	public JpaVendorAdapter jpaVendorAdapter() {
