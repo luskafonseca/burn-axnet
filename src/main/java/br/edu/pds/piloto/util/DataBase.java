@@ -15,10 +15,10 @@ public class DataBase {
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/burn?useTimezone=true&serverTimezone=America/Sao_Paulo");
-		dataSource.setUsername("root");
-		dataSource.setPassword("");
+		dataSource.setDriverClassName("org.postgresql.Driver");
+		dataSource.setUrl("postgres://eqqqjveokallfb:f6b519ec5963032bb579e7db985768fd5fe333554e4c07e85045b928b3502ea7@ec2-34-233-115-14.compute-1.amazonaws.com:5432/d337h8m2d3f5gg");
+		dataSource.setUsername("eqqqjveokallfb");
+		dataSource.setPassword("f6b519ec5963032bb579e7db985768fd5fe333554e4c07e85045b928b3502ea7");
 
 		return dataSource;
 	}
@@ -26,10 +26,10 @@ public class DataBase {
 	@Bean
 	public JpaVendorAdapter jpaVendorAdapter() {
 		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
-		adapter.setDatabase(Database.MYSQL);
+		adapter.setDatabase(Database.POSTGRESQL);
 		adapter.setShowSql(true);
 		adapter.setGenerateDdl(true);
-		adapter.setDatabasePlatform("org.hibernate.dialect.MySQL8Dialect");
+		adapter.setDatabasePlatform("org.hibernate.dialect.PostgreSQL9Dialect");
 		adapter.setPrepareConnection(true);
 
 		return adapter;
