@@ -35,7 +35,7 @@ alert("Atualizado ! ");
     /* ==========================================================================
        countdown timer
        ========================================================================== */
-     jQuery('#clock').countdown('2022/07/30',function(event){
+     jQuery('#clock').countdown('2022/10/22',function(event){
       var $this=jQuery(this).html(event.strftime(''
       +'<div class="time-entry dias"><span>%-D</span> Dias</div> '
       +'<div class="time-entry horas"><span>%H</span> Horas</div> '
