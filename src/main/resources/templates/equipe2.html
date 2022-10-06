@@ -42,7 +42,7 @@
       
     </fieldset>-->
     <fieldset>
-      <input placeholder="Telefone para contato 99-99999-9999" name="contato" id="contato" type="tel" th:field="*{contato}" required value="">
+      <input placeholder="Telefone para contato 99-99999-9999" name="contato" id="contato" type="tel" th:field="*{contato}" pattern="[0-9]{2}[0-9]{5}[0-9]{4} required value="">
          
     </fieldset>
      <input type="hidden" id="id" value="" th:field="*{id}" />
