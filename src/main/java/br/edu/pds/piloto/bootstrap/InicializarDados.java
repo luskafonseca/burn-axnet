@@ -1,4 +1,4 @@
-<!-- package br.edu.pds.piloto.bootstrap;
+/* package br.edu.pds.piloto.bootstrap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -88,4 +88,4 @@ permissaoRepository.save(permissao7);
 }
 
 }
--->
+*/
