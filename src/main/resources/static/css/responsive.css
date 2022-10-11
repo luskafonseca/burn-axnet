@@ -3,6 +3,9 @@
   .neon-bt {
     font-size: 14px;
   }
+  .h3 {
+    font-size: 21px;
+  }
   #main-slide .carousel-caption {
     top: 32%;
   }
@@ -106,6 +109,9 @@
   .neon-bt {
     font-size: 11px;
   }
+   .h3 {
+    font-size: 17px;
+  }
   #main-slide .carousel-caption {
     top: 32%;
   }
@@ -166,6 +172,9 @@
 @media (max-width: 767px) {
   .neon-bt {
     font-size: 10px;
+  }
+   .h3 {
+    font-size: 15px;
   }
   .section-title {
     font-size: 22px;
@@ -268,6 +277,9 @@
 @media (min-width: 320px) and (max-width: 480px) {
   .neon-bt {
     font-size: 10px;
+  }
+   .h3 {
+    font-size: 13px;
   }
   #main-slide .carousel-item .carousel-caption .heading {
     letter-spacing: 0;
