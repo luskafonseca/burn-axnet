@@ -1,5 +1,8 @@
 /* only small desktops */
 @media (min-width: 992px) and (max-width: 1199px) {
+  .neon-bt {
+    font-size: 14px;
+  }
   #main-slide .carousel-caption {
     top: 32%;
   }
@@ -35,6 +38,9 @@
 
 /* tablets */
 @media (max-width: 991px) {
+  .neon-bt {
+    font-size: 12px;
+  }
   #main-slide .carousel-caption {
     top: 32%;
   }
@@ -97,6 +103,9 @@
 
 /* only small tablets */
 @media (min-width: 768px) and (max-width: 991px) {
+  .neon-bt {
+    font-size: 11px;
+  }
   #main-slide .carousel-caption {
     top: 32%;
   }
@@ -155,6 +164,9 @@
 
 /* mobile or only mobile */
 @media (max-width: 767px) {
+  .neon-bt {
+    font-size: 10px;
+  }
   .section-title {
     font-size: 22px;
   }
@@ -254,6 +266,9 @@
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
+  .neon-bt {
+    font-size: 10px;
+  }
   #main-slide .carousel-item .carousel-caption .heading {
     letter-spacing: 0;
   }
