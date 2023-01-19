@@ -39,7 +39,7 @@ public class DataBase {
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.postgresql.Driver");
-		dataSource.setUrl("containers-us-west-53.railway.app");
+		dataSource.setUrl("postgresql://postgres:IKFKcEyN1O9ehB5dBxBd@containers-us-west-53.railway.app:6154/railway");
 		dataSource.setUsername("postgres");
 		dataSource.setPassword("IKFKcEyN1O9ehB5dBxBd");
 
