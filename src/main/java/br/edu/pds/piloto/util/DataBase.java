@@ -35,18 +35,18 @@ public class DataBase {
 
 
 	
-	/*@Bean
+	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setDriverClassName("org.postgresql.Driver");
-		dataSource.setUrl("postgres://eqqqjveokallfb:f6b519ec5963032bb579e7db985768fd5fe333554e4c07e85045b928b3502ea7@ec2-34-233-115-14.compute-1.amazonaws.com:5432/d337h8m2d3f5gg");
-		dataSource.setUsername("eqqqjveokallfb");
-		dataSource.setPassword("f6b519ec5963032bb579e7db985768fd5fe333554e4c07e85045b928b3502ea7");
+		dataSource.setUrl("containers-us-west-53.railway.app");
+		dataSource.setUsername("postgres");
+		dataSource.setPassword("IKFKcEyN1O9ehB5dBxBd");
 
 		return dataSource;
-	}*/
+	}
 
-	@Bean
+	/*@Bean
 	public JpaVendorAdapter jpaVendorAdapter() {
 		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
 		adapter.setDatabase(Database.POSTGRESQL);
@@ -56,5 +56,6 @@ public class DataBase {
 		adapter.setPrepareConnection(true);
 
 		return adapter;
-	}
+	}*/
+	
 }
